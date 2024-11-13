@@ -28,4 +28,8 @@ describe('Add Function', () => {
     it('should add 1.43 + 2.56 to equal 3.99', () => {
         add(1.43, 2.56).should.be.closeTo(3.99, 0.0001);
     });
+
+    it('should add 0.00000000001 + 0.00000000001 to equal 0.00000000002', () => {
+        add(0.00000000001, 0.00000000001).should.be.closeTo(0.00000000002, 0.0001);
+    });
 });
