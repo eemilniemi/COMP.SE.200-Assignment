@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha 'tests/**/*.test.js'",
-    "coverage": "c8 --reporter=lcov mocha 'tests/**/*.test.js'",
+    "test": "mocha 'tests/**/*.test.js'",
+    "coverage": "c8 --reporter=text --reporter=lcov mocha 'tests/**/*.test.js'",
     "coveralls": "npm run coverage && c8 report --reporter=text-lcov"
   },
   "author": "",
