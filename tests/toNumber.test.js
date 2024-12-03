@@ -4,6 +4,11 @@ import *  as chai from 'chai';
 const expect = chai.expect;
 
 describe('ToNumber Function', () => {
+
+    it('should return 3 for 3', () => {
+        expect(toNumber(3)).to.equal(3);
+    });
+    
     it('should return 3 for "3"', () => {
         expect(toNumber("3")).to.equal(3);
     });

@@ -4,6 +4,10 @@ import *  as chai from 'chai';
 const expect = chai.expect;
 
 describe('ToString Function', () => {
+    it('should return "Hello world" for "Hello world"', () => {
+        expect(toString("Hello world")).to.equal('Hello world');
+    });
+
     it('should return "3" for 3', () => {
         expect(toString(3)).to.equal('3');
     });
@@ -32,5 +36,8 @@ describe('ToString Function', () => {
         expect(toString(true)).to.equal('true');
     });
 
+    it('should return ["1", "2", "3"] for [1, 2, 3]', () => {
+        expect(toString([1, 2, 3])).to.equal('1,2,3');
+    });
 
 });
