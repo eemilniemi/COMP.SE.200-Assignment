@@ -8,7 +8,7 @@ describe('ToNumber Function', () => {
     it('should return 3 for 3', () => {
         expect(toNumber(3)).to.equal(3);
     });
-    
+
     it('should return 3 for "3"', () => {
         expect(toNumber("3")).to.equal(3);
     });
@@ -31,6 +31,10 @@ describe('ToNumber Function', () => {
 
     it('should return 1 for true', () => {
         expect(toNumber(true)).to.equal(1);
+    });
+
+    it('should return 0 for false', () => {
+        expect(toNumber(false)).to.equal(0);
     });
 
     it('should return NaN for undefined', () => {
@@ -56,6 +60,13 @@ describe('ToNumber Function', () => {
             }
         };
         expect(toNumber(object)).to.equal(5);
+    });
+
+    it('should return NaN if valueOf is not function', () => {
+        const object = {
+            valueOf: 42
+        }
+        expect(toNumber(object)).to.be.NaN;
     });
 
     it('should return correct number for binary string', () => {
@@ -89,6 +100,14 @@ describe('ToNumber Function', () => {
     it('should return 0 for empty array', () => {
         expect(toNumber([])).to.equal(0);
     });
+
+    it('should return NaN for symbol', () => {
+        expect(toNumber(Symbol())).to.be.NaN;
+    });
+
+
+
+
 
 });
 

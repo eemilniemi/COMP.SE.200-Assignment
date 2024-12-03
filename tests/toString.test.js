@@ -40,4 +40,17 @@ describe('ToString Function', () => {
         expect(toString([1, 2, 3])).to.equal('1,2,3');
     });
 
+    it('should return ["1", "null", "3"] for [1, , 3]', () => {
+        expect(toString([1, null, 3])).to.equal('1,,3');
+    });
+
+    it('should return valueOf for symbol', () => {
+        const symbol = Symbol('abc');
+        expect(toString(symbol)).to.equal(symbol.toString());
+    });
+
+    it('should return "-0" for -0', () => {
+        expect(toString(-0)).to.equal('-0');
+    });
+
 });
