@@ -105,9 +105,9 @@ describe('ToNumber Function', () => {
         expect(toNumber(Symbol())).to.be.NaN;
     });
 
-
-
-
+    it('should return 0 for null with valueOf 0', () => {
+        expect(toNumber(Object.create(null, { valueOf: { value: () => 0 } }))).to.equal(0);
+    });
 
 });
 
