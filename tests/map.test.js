@@ -8,6 +8,10 @@ describe('Map Function', () => {
     expect(map([1, 2, 3, 4, 5], element => element)).to.not.equal([1, 2, 3, 4, 5]);
   });
 
+  it('should return undefined for null', () => {
+    expect(map[null]).to.equal(undefined);
+  });
+
   it('with iteratee that returns the input should return unchanged array', () => {
     expect(map([1, 2, 3, 4, 5], element => element)).to.deep.equal([1, 2, 3, 4, 5]);
   });
