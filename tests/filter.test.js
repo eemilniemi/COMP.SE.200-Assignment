@@ -7,8 +7,8 @@ describe('Filter Function', () => {
   it('should return a new array', () => {
     expect(filter([1, 2, 3, 4, 5], () => true)).to.not.equal([1, 2, 3, 4, 5]);
   });
-  it('should return undefined for null', () => {
-    expect(filter[null]).to.equal(undefined);
+  it('should return [ [] ] for null', () => {
+    expect(filter(null)).to.deep.equal([[]]);
   })
 
   describe('with always true predicate', () => {
